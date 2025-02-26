@@ -4,6 +4,7 @@ import { ReverseTextPipe } from './pipes/reverse-text.pipe';
 import { MathPowPipe } from './pipes/math-pow.pipe';
 import { FormsModule } from '@angular/forms';
 import { ChronoFormatPipe } from './pipes/chrono-format.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 
 
@@ -11,7 +12,8 @@ import { ChronoFormatPipe } from './pipes/chrono-format.pipe';
   declarations: [
     ReverseTextPipe,
     MathPowPipe,
-    ChronoFormatPipe
+    ChronoFormatPipe,
+    HighlightDirective
   ],
   imports: [
     CommonModule,
@@ -21,6 +23,7 @@ import { ChronoFormatPipe } from './pipes/chrono-format.pipe';
     ReverseTextPipe,
     MathPowPipe,
     ChronoFormatPipe,
+    HighlightDirective,
     FormsModule
   ]
 })

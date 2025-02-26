@@ -80,3 +80,8 @@
         <li *ngIf="value % 2 == 0">{{value}}</li>
     </ng-container>
 </ul>
+<h3>Custom Directive (Directive d'attribut)</h3>
+<p>Les custom directives sont des directives permettant d'appliquer un comportement spécifique à un objet HTML, qui aura la présence de la directive dans sa déclaration (par défaut un attribut).</p>
+<p>Nous avons créé un custom directive : <span appHighlight>HighlightDirective</span>; qui a pour sélecteur l'attribut : <span appHighlight>appHighlight</span></p>
+<p>Cette <span appHighlight>directive</span> aura pour comportement de modifier le style de notre élément HTML quand notre souris passe dessu.</p>
+<p appHighlight>Ce paragraphe est entièrement soumis à la directive.</p>
