@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { ReverseTextPipe } from './pipes/reverse-text.pipe';
 import { MathPowPipe } from './pipes/math-pow.pipe';
 import { FormsModule } from '@angular/forms';
+import { ChronoFormatPipe } from './pipes/chrono-format.pipe';
 
 
 
 @NgModule({
   declarations: [
     ReverseTextPipe,
-    MathPowPipe
+    MathPowPipe,
+    ChronoFormatPipe
   ],
   imports: [
     CommonModule,
@@ -18,6 +20,7 @@ import { FormsModule } from '@angular/forms';
   exports :[
     ReverseTextPipe,
     MathPowPipe,
+    ChronoFormatPipe,
     FormsModule
   ]
 })
