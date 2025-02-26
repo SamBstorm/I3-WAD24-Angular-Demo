@@ -1,6 +1,6 @@
 <nav>
     <ul>
-        <li>
+        <!--<li>
             <a routerLink="/">Accueil</a>
         </li>
         <li>
@@ -30,6 +30,23 @@
                     <a routerLink="/exos/chrono">Exercice 01 : Le chronomètre (Binding + Pipe)</a>
                 </li>
             </ul>
+        </li>-->
+        <ng-container *ngFor="let link of links">
+        <li *ngIf="link.children && link.children.length > 0; else simplelink" appHiddingChildMenu>
+            <a [routerLink]="link.url">{{link.title}}</a>
+            <ul class="childMenu hiddenMenu">
+                <li *ngFor="let childLink of link.children">
+                    <a [routerLink]="(link.url ?? '').concat(childLink.url ?? '')">{{childLink.title}}</a>
+                </li>
+            </ul>
         </li>
+        <ng-template #simplelink>
+            <li>
+                <a [routerLink]="link.url">{{link.title}}</a>
+            </li>
+        </ng-template>
+        </ng-container>
     </ul>
 </nav>
+
+
