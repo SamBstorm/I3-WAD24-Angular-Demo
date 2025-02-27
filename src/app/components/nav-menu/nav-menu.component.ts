@@ -19,7 +19,8 @@ export class NavMenuComponent {
       {title : 'Démonstration 06 - Les Input/Output', url : '/demo06', isVisible: true},
     ], isVisible : true},
     {title : 'Section Exercices', url : '/exos', children: [
-      {title : 'Exercice 01 : Le chronomètre (binding + pipe)', url : '/chrono', isVisible: true}
+      {title : 'Exercice 01 : Le chronomètre (binding + pipe)', url : '/chrono', isVisible: true},
+      {title : 'Exercice 02 : La shopping liste (input/output)', url : '/shop', isVisible: true},
     ], isVisible : true}
   ];
 }
