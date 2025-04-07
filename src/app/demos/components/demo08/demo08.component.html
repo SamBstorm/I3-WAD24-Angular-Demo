@@ -9,6 +9,15 @@
         <div>
             <label for="firstName">Prénom :</label>
             <input type="text" id="firstName" formControlName="firstName">
+            <p style="color : rgb(180,10,10); font-weight: bolder;" 
+                *ngIf="myForm.controls['firstName'].getError('required') && !myForm.controls['firstName'].pristine"
+            >Le champ prénom est requis.</p>
+            <p style="color : rgb(180,10,10); font-weight: bolder;" 
+                *ngIf="myForm.controls['firstName'].getError('minlength') && !myForm.controls['firstName'].pristine"
+            >Le champ prénom nécessite 2 caractères minimum.</p>
+            <p style="color : rgb(180,10,10); font-weight: bolder;" 
+                *ngIf="myForm.controls['firstName'].getError('maxlength') && !myForm.controls['firstName'].pristine"
+            >Le champ prénom nécessite 32 caractères maximum.</p>
         </div>
         <div>
             <label for="lastName">Nom de famille :</label>
@@ -19,7 +28,28 @@
             <input type="date" id="birthDate" formControlName="birthDate">
         </div>
     </fieldset>
+    <fieldset formArrayName="guests">
+        <legend>Accompagnants</legend>
+        <button type="button" (click)="addNewGuestForm()">+</button>
+        <fieldset *ngFor="let guestForm of getGuestsArray().controls; let i = index" >
+            <div [formGroupName]="i">
+                <legend>Accompagnant {{i+1}}</legend>
+                <div>
+                    <label [for]="'guest-'+i+'-fn'">Prénom :</label>
+                    <input type="text" [id]="'guest-'+i+'-fn'" formControlName="firstName">
+                </div>
+                <div>
+                    <label [for]="'guest-'+i+'-ln'">Nom de famille :</label>
+                    <input type="text" [id]="'guest-'+i+'-ln'" formControlName="lastName">
+                </div>
+                <div>
+                    <label [for]="'guest-'+i+'-bd'">Date de naissance : </label>
+                    <input type="date" [id]="'guest-'+i+'-bd'" formControlName="birthDate">
+                </div>
+            </div>
+        </fieldset>
+    </fieldset>
     <div>
-        <button type="submit">Enregistrer</button>
+        <button type="submit" [disabled]="!myForm.valid">Enregistrer</button>
     </div>
 </form>
