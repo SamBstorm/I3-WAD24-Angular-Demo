@@ -26,6 +26,10 @@ export class NavMenuComponent {
       {title : 'Exercice 02 : La shopping liste (input/output)', url : '/shop', isVisible: true},
       {title : 'Exercice 03 : La shopping liste V2 (service)', url : '/shopv2', isVisible: true},
       {title : 'Exercice 04 : Formulaire d\'événements', url : '/eventForm', isVisible: true},
+      {title : 'Exercice 05 : Le panier', url : '/shopv3', isVisible: true},
+      {title : 'Exercice 05 : Ordinateur', url : '/prod1', isVisible: true},
+      {title : 'Exercice 05 : Téléphone', url : '/prod2', isVisible: true},
+      {title : 'Exercice 05 : Batterie', url : '/prod3', isVisible: true},
     ], isVisible : true}
   ];
 }
