@@ -14,10 +14,19 @@ export class ExoShopV3Product3Component {
   public productName : string = 'Batterie';
   public form : FormGroup;
   public isInBasket : boolean;
+  public options : any[];
 
   constructor(private _fb : FormBuilder, private _shop : ShopV3LocalService){
     this.isInBasket = this._shop.checkProduct(this.productName);    
     this.form = this.initForm();
+    this.options = [
+      {text : 'Veuillez choisir une quantité', selected :true, disabled : true},
+      {text : 1},
+      {text : 2},
+      {text : 3},
+      {text : 4},
+      {text : 5},
+    ];
   }
 
   private initForm() : FormGroup{

@@ -14,9 +14,8 @@
         <div>
             <label for="quantity">Quantité : </label>
             <select id="quantity" formControlName="quantity">
-                <option selected disabled>Veuillez choisir une quantité</option>
-                <option *ngFor="let i of [1,2,3,4,5]">
-                    {{i}}
+                <option *ngFor="let opt of options" [selected]="opt.selected" [disabled]="opt.disabled" >
+                    {{opt.text}}
                 </option>
             </select>
         </div>
