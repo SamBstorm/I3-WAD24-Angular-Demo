@@ -11,6 +11,7 @@ import { ShopListComponent } from './components/shop-list/shop-list.component';
 import { ShopV2Component } from './components/shop-v2/shop-v2.component';
 import { ShopV2AddProductComponent } from './components/shop-v2-add-product/shop-v2-add-product.component';
 import { ShopV2ListComponent } from './components/shop-v2-list/shop-v2-list.component';
+import { ExoEventFormComponent } from './components/exo-event-form/exo-event-form.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ShopV2ListComponent } from './components/shop-v2-list/shop-v2-list.comp
     ShopListComponent,
     ShopV2Component,
     ShopV2AddProductComponent,
-    ShopV2ListComponent
+    ShopV2ListComponent,
+    ExoEventFormComponent
   ],
   imports: [
     CommonModule,

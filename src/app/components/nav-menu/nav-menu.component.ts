@@ -24,6 +24,7 @@ export class NavMenuComponent {
       {title : 'Exercice 01 : Le chronomètre (binding + pipe)', url : '/chrono', isVisible: true},
       {title : 'Exercice 02 : La shopping liste (input/output)', url : '/shop', isVisible: true},
       {title : 'Exercice 03 : La shopping liste V2 (service)', url : '/shopv2', isVisible: true},
+      {title : 'Exercice 04 : Formulaire d\'événements', url : '/eventForm', isVisible: true},
     ], isVisible : true}
   ];
 }

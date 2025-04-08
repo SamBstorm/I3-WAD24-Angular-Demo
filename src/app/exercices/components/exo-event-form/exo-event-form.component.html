@@ -1,0 +1,53 @@
+<h1>Event planner</h1>
+<h2>Veuilelz indiquer les informations concernant votre événement :</h2>
+
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+        <legend>L'événement</legend>
+        <div>
+            <label for="eventName">Nom :</label>
+            <input type="text" id="eventName" formControlName="eventName">
+            <div style="padding: 3px; border-radius: 5px; background-color: rgb(255,200,200); color: rgb(128,25,25);" *ngIf="eventForm.get('eventName')?.errors && !eventForm.get('eventName')?.pristine">
+                <p style="margin: 0;" *ngIf="eventForm.get('eventName')?.getError('required')">Ce champs est obligatoire</p>
+                <p style="margin: 0;" *ngIf="eventForm.get('eventName')?.getError('minlength')">Ce champs doit contenir au minimum 2 caractères</p>
+                <p style="margin: 0;" *ngIf="eventForm.get('eventName')?.getError('maxlength')">Ce champs doit contenir au maximum 16 caractères</p>
+            </div>
+        </div>
+        <div>
+            <label for="eventDesc">Description :</label>
+            <textarea id="eventDesc" formControlName="eventDesc"></textarea>
+            <div>{{eventForm.value.eventDesc?.length ?? 0}}/512</div>
+            <div style="padding: 3px; border-radius: 5px; background-color: rgb(255,200,200); color: rgb(128,25,25);" *ngIf="eventForm.get('eventDesc')?.errors && !eventForm.get('eventDesc')?.pristine">
+                <p style="margin: 0;" *ngIf="eventForm.get('eventDesc')?.getError('maxlength')">Ce champs doit contenir au maximum 512 caractères</p>
+            </div>
+        </div>
+        <fieldset>
+            <legend>Horaire</legend>            
+            <div>
+                <label for="eventDate">Date :</label>
+                <input type="date" id="eventDate" formControlName="eventDate">
+                <div style="padding: 3px; border-radius: 5px; background-color: rgb(255,200,200); color: rgb(128,25,25);" *ngIf="eventForm.get('eventDate')?.errors && !eventForm.get('eventDate')?.pristine">
+                    <p style="margin: 0;" *ngIf="eventForm.get('eventDate')?.getError('required')">Ce champs est obligatoire</p>
+                </div>
+            </div>
+            <div>
+                <label for="eventAllDay">Toute la journée :</label>
+                <input type="checkbox" id="eventAllDay" formControlName="eventAllDay">
+            </div>
+            <fieldset *ngIf="!eventForm.value.eventAllDay">
+                <legend>Heures</legend>                
+                <div>
+                    <label for="eventStartTime">Début :</label>
+                    <input type="time" id="eventStartTime" formControlName="eventStartTime">
+                </div>                
+                <div>
+                    <label for="eventEndTime">Fin :</label>
+                    <input type="time" id="eventEndTime" formControlName="eventEndTime">
+                </div>
+            </fieldset>
+        </fieldset>
+    </fieldset>
+    <div>
+        <button type="submit" [disabled]="!eventForm.valid">Enregistrer</button>
+    </div>
+</form>
