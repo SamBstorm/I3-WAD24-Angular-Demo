@@ -16,6 +16,7 @@ import { Demo07Component } from './components/demo07/demo07.component';
 import { Demo07InputsComponent } from './components/demo07-inputs/demo07-inputs.component';
 import { Demo07OutputsComponent } from './components/demo07-outputs/demo07-outputs.component';
 import { Demo08Component } from './components/demo08/demo08.component';
+import { Demo09Component } from './components/demo09/demo09.component';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { Demo08Component } from './components/demo08/demo08.component';
     Demo01Component, 
     Demo02Component, 
     Demo03Component, 
-    Demo04Component, Demo05Component, Demo06ParentComponent, Demo06EnfantComponent, Demo07Component, Demo07InputsComponent, Demo07OutputsComponent, Demo08Component
+    Demo04Component, Demo05Component, Demo06ParentComponent, Demo06EnfantComponent, Demo07Component, Demo07InputsComponent, Demo07OutputsComponent, Demo08Component, Demo09Component
   ],
   imports: [
     CommonModule,

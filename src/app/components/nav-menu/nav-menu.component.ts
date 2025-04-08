@@ -18,7 +18,8 @@ export class NavMenuComponent {
       {title : 'Démonstration 05 - Les directives', url : '/demo05', isVisible: true},
       {title : 'Démonstration 06 - Les Input/Output', url : '/demo06', isVisible: true},
       {title : 'Démonstration 07 - Les services', url : '/demo07', isVisible: true},
-      {title : 'Démonstration 08 - Les formulaires', url : '/demo08', isVisible: true}
+      {title : 'Démonstration 08 - Les formulaires', url : '/demo08', isVisible: true},
+      {title : 'Démonstration 09 - Les storages', url : '/demo09', isVisible: true},
     ], isVisible : true},
     {title : 'Section Exercices', url : '/exos', children: [
       {title : 'Exercice 01 : Le chronomètre (binding + pipe)', url : '/chrono', isVisible: true},

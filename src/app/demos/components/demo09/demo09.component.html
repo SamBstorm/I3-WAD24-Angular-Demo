@@ -1,0 +1,27 @@
+<h1>Démonstration 09 : Les storages</h1>
+
+<h2>Liste des invités</h2>
+<ul *ngIf="guests.length > 0; else noList">
+    <li *ngFor="let guest of guests">{{guest.firstName}} {{guest.lastName}}</li>
+</ul>
+
+<ng-template #noList>
+    <p>Pas d'invité actuellement.</p>
+</ng-template>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+        <legend>Votre invité : </legend>
+        <div>
+            <label for="firstName">Prénom :</label>
+            <input type="text" id="firstName" formControlName="guestFirstName">
+        </div>
+        <div>
+            <label for="lastName">Nom :</label>
+            <input type="text" id="lastName" formControlName="guestLastName">
+        </div>
+    </fieldset>
+    <div>
+        <button type="submit">Inviter</button>
+    </div>
+</form>

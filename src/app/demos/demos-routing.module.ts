@@ -9,6 +9,7 @@ import { Demo05Component } from './components/demo05/demo05.component';
 import { Demo06ParentComponent } from './components/demo06-parent/demo06-parent.component';
 import { Demo07Component } from './components/demo07/demo07.component';
 import { Demo08Component } from './components/demo08/demo08.component';
+import { Demo09Component } from './components/demo09/demo09.component';
 
 const routes: Routes = [
   {path:'', component: MainDemoComponent, children:[
@@ -19,7 +20,8 @@ const routes: Routes = [
     {path:'demo05', component: Demo05Component},
     {path:'demo06', component: Demo06ParentComponent},
     {path:'demo07', component: Demo07Component},
-    {path:'demo08', component: Demo08Component}
+    {path:'demo08', component: Demo08Component},
+    {path:'demo09', component: Demo09Component}
   ]}
 ];
 
